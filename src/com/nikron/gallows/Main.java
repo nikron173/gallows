@@ -2,17 +2,17 @@ package com.nikron.gallows;
 
 public class Main {
     public static void main(String[] args) {
-        Helper.startGame();
-        Gallows game = new Gallows();
-        int i = Helper.inputInt();
-        while (i != 0) {
-            game.game();
-            while (game.isGame()) {
-                game.game();
+        RandomWord random = new RandomWord();
+        Helper.welcome();
+        Helper.startMoves();
+        int move = -1;
+        while (move != 0){
+            move = Helper.inputInt();
+            if (move == 1) {
+                Game game = new Game(random.getRandomWord());
+                game.start();
             }
-            Helper.startGame();
-            i = Helper.inputInt();
-            if (i == 1) game = new Gallows();
+            if (move != 0) Helper.moves();
         }
     }
 }
