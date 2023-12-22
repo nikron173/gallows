@@ -51,7 +51,7 @@ public class Helper {
         String word;
         try {
             word = reader.readLine();
-            if (word.length() > 1) {
+            if (word.length() != 1) {
                 throw new IOException();
             }
         } catch (IOException ex){
@@ -72,6 +72,14 @@ public class Helper {
         if (move == 0 || move == 1) return move;
         errorParameter();
         return inputInt();
+    }
+
+    public static void countErrors(int count){
+        System.out.println("Количество ошибок: " + count);
+    }
+
+    public static void message(String message){
+        System.out.println(message);
     }
 
 }

@@ -50,13 +50,14 @@ public class Game {
 
     public void start(){
         while (!isFinish){
-            System.out.println(Arrays.toString(hiddenWord));
+            Helper.message(Arrays.toString(hiddenWord));
+            Helper.countErrors(error);
             if (error == 6){
                 isFinish = true;
                 gameDrawing.get(6);
                 Helper.finishLose(word);
             } else {
-                System.out.println(gameDrawing.get(error));
+                Helper.message(gameDrawing.get(error));
                 char ch = Character.toUpperCase(Helper.inputChar());
                 if (word.indexOf(ch) == -1){
                     Helper.notRight();
