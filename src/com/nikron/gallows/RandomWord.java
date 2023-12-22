@@ -11,8 +11,6 @@ import java.util.List;
 import java.util.Random;
 
 public class RandomWord {
-    //private Path filePath = Paths.get("C:\\Users\\nmoiseev\\IdeaProjects\\gallows\\out\\production\\gallows\\com\\nikron\\gallows\\words.txt");
-
     private Path filePath = Paths.get(
             getClass().getResource("").getPath().toString().substring(1)
                     .replaceAll("/", "\\\\")+"words.txt");

@@ -20,7 +20,6 @@ public class Game {
     static {
         try (BufferedReader reader = new BufferedReader(
                 new FileReader(
-                     //   "C:\\Users\\nmoiseev\\IdeaProjects\\gallows\\out\\production\\gallows\\com\\nikron\\gallows\\gallowsAscii.txt"
                         Game.class.getResource("").getPath().toString().substring(1)
                                 .replaceAll("/", "\\\\")+"gallowsAscii.txt"))){
             StringBuilder builder = new StringBuilder();
