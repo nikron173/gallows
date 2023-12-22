@@ -37,9 +37,9 @@ public class Game {
                 }
             }
         } catch (FileNotFoundException ex){
-            throw new RuntimeException("Файл " + System.getProperty("user.dir") + " не найден.");
+            throw new RuntimeException("Файл gallowsAscii.txt не найден.");
         } catch (IOException ex){
-            throw new RuntimeException("Ошибка чтения файла " + System.getProperty("user.dir"));
+            throw new RuntimeException("Ошибка чтения файла gallowsAscii.txt");
         }
     }
 
