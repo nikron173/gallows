@@ -13,9 +13,9 @@ public class Game {
     private int error = 0;
     private boolean isFinish = false;
     Random random = new Random();
-    private String word;
-    private char[] hiddenWord;
-    private static Map<Integer, String> gameDrawing = new HashMap<>();
+    private final String word;
+    private final char[] hiddenWord;
+    private static final Map<Integer, String> gameDrawing = new HashMap<>();
 
     static {
         try (BufferedReader reader = new BufferedReader(
@@ -58,14 +58,15 @@ public class Game {
                 Helper.finishLose(word);
             } else {
                 Helper.message(gameDrawing.get(error));
-                char ch = Character.toUpperCase(Helper.inputChar());
+                char ch = Helper.inputChar();
                 if (word.indexOf(ch) == -1){
                     Helper.notRight();
                     error++;
-                } else if (checker(ch) && word.indexOf(ch) != -1) {
-                    error++;
+                }
+                else if (checker(ch)) {
                     Helper.notRightChar();
-                } else {
+                }
+                else {
                     openCharHiddenWord(ch);
                 }
             }

@@ -51,11 +51,12 @@ public class Helper {
         String word;
         try {
             word = reader.readLine();
-            if (word.length() != 1) {
+            if (!word.matches("[А-Я]")) {
                 throw new IOException();
             }
         } catch (IOException ex){
             errorParameter();
+            System.out.println("Введите букву А-Я в верхнем регистре.");
             return inputChar();
         }
         return word.charAt(0);
