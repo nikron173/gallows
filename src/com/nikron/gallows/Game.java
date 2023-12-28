@@ -1,6 +1,7 @@
 package com.nikron.gallows;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,9 +20,7 @@ public class Game {
 
     static {
         try (BufferedReader reader = new BufferedReader(
-                new FileReader(
-                        Game.class.getResource("").getPath().toString().substring(1)
-                                .replaceAll("/", "\\\\")+"gallowsAscii.txt"))){
+                new FileReader("src\\com\\nikron\\gallows\\gallowsAscii.txt"))){
             StringBuilder builder = new StringBuilder();
             int i = 0;
             while (reader.ready()){

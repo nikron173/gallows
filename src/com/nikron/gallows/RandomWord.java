@@ -1,5 +1,6 @@
 package com.nikron.gallows;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -8,9 +9,7 @@ import java.util.List;
 import java.util.Random;
 
 public class RandomWord {
-    private Path filePath = Paths.get(
-            getClass().getResource("").getPath().toString().substring(1)
-                    .replaceAll("/", "\\\\")+"words.txt");
+    private Path filePath = Paths.get(new File("src\\com\\nikron\\gallows\\words.txt").getPath());
     private List<String> words;
     private final Random random = new Random();
 
